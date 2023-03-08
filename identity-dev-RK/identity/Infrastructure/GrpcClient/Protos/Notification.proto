@@ -1,0 +1,32 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Infrastructure";
+package Notification.Protos;
+import "google/protobuf/empty.proto";
+service NotificationService
+{
+	rpc ResetPassword(ResetPasswordRequest) returns (google.protobuf.Empty);
+	rpc ChangeEmail(ChangeEmailRequest) returns (google.protobuf.Empty);
+	rpc ConfirmEmail(ConfirmEmailRequest) returns (google.protobuf.Empty);
+}
+
+message ResetPasswordRequest
+{
+	string email =1 ;
+	string token =2 ;
+}
+message ChangeEmailRequest
+{
+	string email=1;
+	string token=2;
+	string UserId=3;
+}
+message ConfirmEmailRequest
+{
+	string email = 1;
+	string token = 2;
+	string username = 3;
+	string firstname = 4;
+	string lastname = 5;
+	string userid = 6;
+}

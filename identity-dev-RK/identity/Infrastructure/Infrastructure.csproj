@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+   
+  </PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="GrpcClient\Protos\Notification.proto" />
+	</ItemGroup>
+	
+  <ItemGroup>
+	 <PackageReference Include="Google.Protobuf" Version="3.21.7" />
+	 <PackageReference Include="Grpc.Net.Client" Version="2.49.0" />
+	 <PackageReference Include="Grpc.Tools" Version="2.49.1">
+	   <PrivateAssets>all</PrivateAssets>
+	   <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	 </PackageReference>
+	 <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Convey" Version="1.0.541" />
+    <PackageReference Include="Convey.CQRS.Commands" Version="1.0.541" />
+    <PackageReference Include="Convey.CQRS.Queries" Version="1.0.541" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="GrpcClient\Protos\Notification.proto" GrpcServices="Client" />
+	</ItemGroup>
+
+</Project>
